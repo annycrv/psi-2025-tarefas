@@ -19,7 +19,3 @@ Atividades entregues após o prazo valem 50% da nota até a data final de cada u
 - **Entrega: 20/06/2025**
 - Siga as instruções do slide.
 - https://dvcirilo-ifrn.github.io/psi/slides/aula07.html#12 
-
-## Equipe
-- Anny Carolline Oliveira Costa
-- Williany Vitória Mendes Graciano
