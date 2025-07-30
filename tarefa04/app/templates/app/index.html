@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="{% static 'app/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <h1>Tarefas</h1>
+    {% for tarefa in tarefas %}
+    <li>{{ tarefa.nome }} - {{ tarefa.prazo }} - {{ tarefa.status }} </li>
+    {% if tarefa.prazo == hoje %}
+        <p>A entrega é hoje</p>
+    {% elif tarefa.prazo < hoje %}
+        <p>ATRASADA</p>
+    {% endif %}
+    {% empty %}
+    <li>Nenhuma tarefa encontrada.</li> 
+    {% endfor %}
+</body>
+</html>
