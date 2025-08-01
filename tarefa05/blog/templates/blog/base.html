@@ -1,5 +1,6 @@
+{% extends "blog/index.html" %}
 {% load static %}
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +9,8 @@
     <link href= {% static 'blog/style.css' %} rel="stylesheet"/>
 </head>
 <body>
-    <h1>Blog do PSI</h1>
+  {% block content %}
+    <h1>Teste</h1>
     {% for post in postagens %}
       <div class="post-preview">
         <a href="{% url 'post' post.id  %}">
@@ -24,5 +26,6 @@
       <!-- Divider -->
       <hr class="my-4" />
       {% endfor %}
+    {% endblock content%}
 </body>
-</html>
+</html> {% endcomment %}
