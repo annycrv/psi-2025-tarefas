@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href= {% static 'blog/style.css' %} rel="stylesheet"/>
+</head>
+<body>
+    <h1>Blog do PSI</h1>
+    {% for post in postagens %}
+      <div class="post-preview">
+        <a href="{% url 'post' post.id  %}">
+          <h2 class="post-title">{{ post.titulo }}</h2>
+          <h3 class="post-subtitle">{{ post.subtitulo }}</h3>
+        </a>
+        <p class="post-meta">
+          Postado por
+          <a href="#!">{{ post.autor }}</a>
+          em {{ post.data }}
+        </p>
+      </div>
+      <!-- Divider -->
+      <hr class="my-4" />
+      {% endfor %}
+</body>
+</html>
