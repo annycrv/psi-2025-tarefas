@@ -8,4 +8,4 @@ def index(request):
         "tarefas": tarefas,
         "hoje": date.today(),
     }
-    return render(request, "app/index.html", context)
+    return render(request, "listat/index.html", context)

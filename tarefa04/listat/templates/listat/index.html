@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'listat/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tarefas</h1>
+        <ul>
+            {% for tarefa in tarefas %}
+                <li class="tarefa-item">
+                    <div>
+                        <strong>{{ tarefa.nome }}</strong><br>
+                        Prazo: {{ tarefa.prazo }}<br>
+                        Status: <span class="status">{{ tarefa.status }}</span>
+                    </div>
+                    <div>
+                        {% if tarefa.prazo == hoje %}
+                            <span class="hoje">Entrega é hoje!</span>
+                        {% elif tarefa.prazo < hoje %}
+                            <span class="atrasada">ATRASADA</span>
+                        {% endif %}
+                    </div>
+                </li>
+            {% empty %}
+                <li class="tarefa-item">Nenhuma tarefa encontrada.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
