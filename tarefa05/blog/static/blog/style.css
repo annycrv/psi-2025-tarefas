@@ -278,6 +278,10 @@ pre code {
   word-break: normal;
 }
 
+.findex{
+  width: 400px;
+}
+
 code {
   font-size: 0.875em;
   color: var(--bs-code-color);

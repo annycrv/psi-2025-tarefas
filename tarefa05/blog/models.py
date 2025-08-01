@@ -15,7 +15,7 @@ class Postagem(models.Model):
     subtitulo = models.CharField(max_length=80)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
     data = models.CharField(max_length=50)
-    texto = models.CharField(max_length=180)
+    texto = models.CharField(max_length=2000)
 
     class Meta:
         verbose_name_plural = "Postagens"

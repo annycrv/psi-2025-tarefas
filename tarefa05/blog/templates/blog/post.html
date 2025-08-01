@@ -1,17 +1,27 @@
 {% extends "blog/index.html" %}
 {% load static %}
-<!-- Post Content-->
-    {% block content %}
-        <article class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p><img src="{{ post.imagem.url }}" /></p>
-                        <p>{{post.titulo}}</p>
-                        <p>{{post.subtitulo}}</p>
-                        <p>{{ post.texto }}</p>
-                    </div>
-                </div>
+
+{% block content %}
+<header class="py-5 bg-dark text-white" style="background-image: url('{{ post.imagem.url }}'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="text-center my-5">
+      <h1 class="fw-bolder">{{ post.titulo }}</h1>
+      <p class="lead mb-0">{{ post.subtitulo }}</p>
+    </div>
+  </div>
+</header>
+<br>
+<br>
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p class="fw-bolder">Publicado em {{ post.data }}</p>
+                <hr>
+                <p>{{ post.texto }}</p>
             </div>
-        </article>
-    {% endblock %}
+        </div>
+    </div>
+</article>
+{% endblock %}
+
