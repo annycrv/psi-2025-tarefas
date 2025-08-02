@@ -29,8 +29,8 @@
     <header class="py-5 bg-dark text-white" style="background-image: url('{% static 'blog/img/header-bg.jpg' %}'); background-size: cover; background-position: center;">
       <div class="container">
         <div class="text-center my-5">
-          <h1 class="fw-bolder">Bem-vindo ao Meu Blog!</h1>
-          <p class="lead mb-0">Aqui estão as últimas postagens:</p>
+          <h1 class="fw-bolder">{{ blog.titulo }}</h1>
+          <p class="lead mb-0">{{ blog.subtitulo }}</p>
         </div>
       </div>
     </header>
@@ -62,7 +62,7 @@
     <!-- Rodapé -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Anny Oliveira 2025</p>
+        <div class="small text-center text-muted fst-italic">Copyright &copy; {{ blog.copyright }} 2025</div>
       </div>
     </footer>
 
